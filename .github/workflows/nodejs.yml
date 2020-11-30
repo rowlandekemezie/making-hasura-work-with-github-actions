@@ -24,7 +24,7 @@ jobs:
         ports:
           - 8080:8080
         options: >-
-          --health-cmd "curl -f http://localhost/8080 || exit 1"
+          --health-cmd "curl host.docker.internal:8080 || exit 1"
           --health-interval 60s
           --health-timeout 10s
           --health-retries 5
@@ -51,3 +51,4 @@ jobs:
         node index.js
       env:
         CI: true
+    - run   

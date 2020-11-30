@@ -41,7 +41,9 @@ jobs:
       run: |
         docker ps
         cd docker
+        echo "calling hasura"
         curl http:/localhost:8080/healthz
+        echo "calling hasura end"
         hasura migrate status --skip-update-check --endpoint http://localhost:8080
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1

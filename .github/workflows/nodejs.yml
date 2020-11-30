@@ -51,4 +51,3 @@ jobs:
         node index.js
       env:
         CI: true
-    - run   
